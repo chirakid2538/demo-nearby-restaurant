@@ -1,6 +1,6 @@
 FROM node:alpine as deps
 
-WORKDIR /app
+WORKDIR /frontend
 
 COPY package.json package-lock.json ./
 
@@ -8,19 +8,20 @@ RUN npm install --force
 
 FROM node:alpine as builder
 
-WORKDIR /app
+WORKDIR /frontend
 
 COPY . .
-COPY --from=deps /app/node_modules ./node_modules
+COPY --from=deps /frontend/node_modules ./node_modules
 
 RUN npm run build
 
 FROM node:alpine
 
-WORKDIR /app
+WORKDIR /frontend
 
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/.output ./.output
-COPY --from=builder /app/package.json ./
+COPY --from=builder /frontend/node_modules ./node_modules
+COPY --from=builder /frontend/.output ./.output
+COPY --from=builder /frontend/.nuxt ./.nuxt
+COPY --from=builder /frontend/package.json ./
 
 CMD [ "npm" , "run" , "start:prod" ]
