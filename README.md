@@ -53,8 +53,8 @@ project structure
 api endpoint
 
 Postman Collection แนบตัวอย่าง Request, Response
-[โหลดไฟล์](nearby-restaurant.postman_collection.json) Postman Env
-[โหลดไฟล์](nearby-restaurant.postman_environment.json)
+[โหลดไฟล์](doc/nearby-restaurant.postman_collection.json) Postman Env
+[โหลดไฟล์](doc/nearby-restaurant.postman_environment.json)
 
 | Endpoint                   | Description                                              |
 | :------------------------- | :------------------------------------------------------- |
