@@ -1,11 +1,11 @@
 
 import { defineStore } from 'pinia';
 import { AddressSuggestion, PlaceSuggestion } from 'interface/address';
+import axios from 'axios';
 
 
 type RestaurantListingStore = {
   search: globalThis.Ref<string>,
-  loading: globalThis.Ref<boolean>,
   zoom: globalThis.Ref<number>,
   center: globalThis.Ref<any>,
   addresses: globalThis.Ref<ResponseListing<AddressSuggestion>>,
@@ -18,7 +18,9 @@ type RestaurantListingStore = {
   handleFocusPlace: (place: PlaceSuggestion, focusZoom?: number) => void
 }
 type ResponseListing<T> = {
-  items: T[]
+  items: T[],
+  error?: string,
+  loading: boolean
 }
 /**
  * Note 
@@ -31,10 +33,9 @@ type ResponseListing<T> = {
 const DEFAULT_ZOOM = 15;
 export const useRestaurantListingStore = defineStore('restaurantListingStore', (): RestaurantListingStore => {
   const search = ref('')
-  const loading = ref(false)
   const debounceTimeout = ref<ReturnType<typeof setTimeout>>()
-  const addresses = ref<ResponseListing<AddressSuggestion>>({ items: [] })
-  const places = ref<ResponseListing<PlaceSuggestion>>({ items: [] })
+  const addresses = ref<ResponseListing<AddressSuggestion>>({ items: [], loading: false })
+  const places = ref<ResponseListing<PlaceSuggestion>>({ items: [], loading: false })
 
   const zoom = ref<number>(DEFAULT_ZOOM)
   const center = ref({ lat: 13.7462411, lng: 100.5298693 })
@@ -50,16 +51,15 @@ export const useRestaurantListingStore = defineStore('restaurantListingStore', (
   async function handleSubmitSearch() {
     try {
       if (!search.value) return;
-      loading.value = true;
-      const { data }: any = await useFetch('/api/address/suggestion', {
-        params: {
-          search: String(search.value)
-        }
-      });
-      addresses.value = data.value
+      addresses.value.loading = true;
+      addresses.value.items = [];
+      const response = await axios.get('/api/address/suggestion', { params: { search: String(search.value) } })
+      addresses.value = response.data
     } catch (error) {
+      const e = (error as any)
+      addresses.value.error = e?.response.data?.message ?? e.message
     } finally {
-      loading.value = false;
+      addresses.value.loading = false;
     }
   }
 
@@ -75,18 +75,17 @@ export const useRestaurantListingStore = defineStore('restaurantListingStore', (
 
   async function handleGetPlaces() {
     try {
-      loading.value = true;
-      const { data }: any = await useFetch('/api/address/nearby', {
-        params: {
-          search: String(search.value)
-        }
-      });
-      places.value = data.value
+      places.value.loading = true;
+      places.value.items = [];
+      const response = await axios.get('/api/address/nearby', { params: { search: String(search.value) } })
 
-      if (data.value?.items?.[0]) handleFocusPlace(data.value?.items?.[0])
+      places.value = response.data
+      if (response.data?.items?.[0]) handleFocusPlace(response.data?.items?.[0])
     } catch (error) {
+      const e = (error as any)
+      places.value.error = e?.response.data?.message ?? e.message
     } finally {
-      loading.value = false;
+      places.value.loading = false;
     }
   }
 
@@ -103,7 +102,7 @@ export const useRestaurantListingStore = defineStore('restaurantListingStore', (
     }
   }
 
-  return { search, loading, addresses, places, zoom, center, getCurrentLocation, handleGetPlaces, triggerSubmitSearch, handleClickAddress, handleFocusPlace };
+  return { search, addresses, places, zoom, center, getCurrentLocation, handleGetPlaces, triggerSubmitSearch, handleClickAddress, handleFocusPlace };
 });
 
 

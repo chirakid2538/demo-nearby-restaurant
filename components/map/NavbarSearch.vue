@@ -6,7 +6,7 @@
           v-bind="props"
           class="input-autocomplete-search"
           variant="solo"
-          :loading="restaurantListingStore.loading"
+          :loading="restaurantListingStore.addresses.loading"
           v-model="restaurantListingStore.search"
           label="ค้นหาใน Google map"
           hide-details
@@ -31,12 +31,18 @@
         <div
           v-show="
             restaurantListingStore.addresses.items.length < 1 &&
-            restaurantListingStore.loading === false
+            restaurantListingStore.addresses.loading === false
           "
           class="px-2 py-2"
         >
           <p class="text-grey-darken-1 text-caption">
             ไม่พบผลลัพธ์การค้นหาพื้นที่ใกล้เคียง ลองพิมพ์ใหม่อีกครั้ง
+          </p>
+          <p
+            v-show="Boolean(restaurantListingStore.addresses.error)"
+            class="text-red-darken-1 text-caption"
+          >
+            {{ restaurantListingStore.addresses.error }}
           </p>
         </div>
       </v-card>

@@ -1,5 +1,21 @@
 <template>
   <div>
+    <v-card
+      class="position-relative rounded px-2 py-2 text-grey-darken-1 text-caption mx-auto"
+      style="max-width: 320px; text-align: center"
+      v-show="
+        restaurantListingStore.places.items.length < 1 &&
+        restaurantListingStore.places.loading === false
+      "
+    >
+      ไม่พบร้านอาหารในพื้นที่ใกล้เคียง ลองพิมพ์ใหม่อีกครั้ง
+      <p
+        v-show="Boolean(restaurantListingStore.places.error)"
+        class="text-red-darken-1 text-caption"
+      >
+        {{ restaurantListingStore.places.error }}
+      </p>
+    </v-card>
     <Swiper
       :space-between="30"
       :slides-per-view="1"
