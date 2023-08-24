@@ -66,6 +66,7 @@ export const useRestaurantListingStore = defineStore('restaurantListingStore', (
       const response = await axios.get('/api/address/suggestion', { headers: { 'x-recaptcha': token }, params: { search: String(search.value) } })
       addresses.value = response.data
     } catch (error) {
+      console.log(error)
       const e = (error as any)
       addresses.value.error = e?.response?.data?.message ?? e.message
     } finally {
@@ -94,6 +95,7 @@ export const useRestaurantListingStore = defineStore('restaurantListingStore', (
       places.value = response.data
       if (response.data?.items?.[0]) handleFocusPlace(response.data?.items?.[0])
     } catch (error) {
+      console.log(error)
       const e = (error as any)
       places.value.error = e?.response?.data?.message ?? e.message
     } finally {
