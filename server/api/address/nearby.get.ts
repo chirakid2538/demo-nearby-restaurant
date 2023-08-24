@@ -3,6 +3,7 @@ import Joi from 'joi';
 import { PlaceSuggestion } from "../../../interface/address";
 import { Location, getGeocode, getNearbySuggestion } from "../../service/googleMap";
 import { handleError } from "../../utils/exception/utils";
+import { validateRecaptcha } from '../../utils/validation';
 
 
 /**
@@ -19,6 +20,7 @@ const schema = Joi.object({
   search: Joi.string()
 })
 export default defineEventHandler(async (event) => {
+  await validateRecaptcha(event);
   const query = getQuery(event);
   await validate(schema, query)
   const cacheKey = `nearby-${md5(JSON.stringify(query))}`;

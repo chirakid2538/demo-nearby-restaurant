@@ -3,7 +3,7 @@ import Joi from 'joi';
 import { AddressSuggestion } from "../../../interface/address";
 import { getAddressSuggestion } from "../../service/googleMap";
 import { handleError } from "../../utils/exception/utils";
-import { validate } from '../../utils/validation';
+import { validate, validateRecaptcha } from '../../utils/validation';
 
 /**
  * https://unstorage.unjs.io/drivers/redis
@@ -14,6 +14,7 @@ const schema = Joi.object({
     .required()
 })
 export default defineEventHandler(async (event) => {
+  await validateRecaptcha(event);
   const query = getQuery(event);
   await validate(schema, query)
 

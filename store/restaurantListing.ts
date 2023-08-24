@@ -1,5 +1,6 @@
 
 import { defineStore } from 'pinia';
+import { useReCaptcha } from 'vue-recaptcha-v3';
 import { AddressSuggestion, PlaceSuggestion } from 'interface/address';
 import axios from 'axios';
 
@@ -39,6 +40,7 @@ export const useRestaurantListingStore = defineStore('restaurantListingStore', (
 
   const zoom = ref<number>(DEFAULT_ZOOM)
   const center = ref({ lat: 13.7462411, lng: 100.5298693 })
+  const recaptchaInstance = useReCaptcha();
 
 
   function triggerSubmitSearch() {
@@ -48,13 +50,20 @@ export const useRestaurantListingStore = defineStore('restaurantListingStore', (
     }, 500);
   }
 
+  const recaptcha = async (action: string) => {
+    await recaptchaInstance?.recaptchaLoaded();
+    const token = await recaptchaInstance?.executeRecaptcha(action);
+    return token;
+  };
+
   async function handleSubmitSearch() {
     try {
       if (!search.value) return;
       addresses.value.error = undefined;
       addresses.value.loading = true;
       addresses.value.items = [];
-      const response = await axios.get('/api/address/suggestion', { params: { search: String(search.value) } })
+      const token = await recaptcha('api/address/suggestion');
+      const response = await axios.get('/api/address/suggestion', { headers: { 'x-recaptcha': token }, params: { search: String(search.value) } })
       addresses.value = response.data
     } catch (error) {
       const e = (error as any)
@@ -79,7 +88,8 @@ export const useRestaurantListingStore = defineStore('restaurantListingStore', (
       places.value.loading = true;
       places.value.error = undefined;
       places.value.items = [];
-      const response = await axios.get('/api/address/nearby', { params: { search: String(search.value) } })
+      const token = await recaptcha('api/address/suggestion');
+      const response = await axios.get('/api/address/nearby', { headers: { 'x-recaptcha': token }, params: { search: String(search.value) } })
 
       places.value = response.data
       if (response.data?.items?.[0]) handleFocusPlace(response.data?.items?.[0])

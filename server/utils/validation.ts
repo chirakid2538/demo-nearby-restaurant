@@ -1,4 +1,5 @@
 import Joi from "joi";
+import { verify } from "../service/receptcha";
 
 const responseValidateFailed = ({ error }: any) => {
   return {
@@ -21,5 +22,15 @@ export const validate = async (schema: Joi.ObjectSchema<any>, params: any) => {
       throw createError({ statusCode: 400, statusMessage: 'common/validation-failed', data: { errors: _.errors } })
     }
     throw createError({ statusCode: 500, statusMessage: 'common/validation-failed' })
+  }
+};
+
+export const validateRecaptcha = async (event: any) => {
+  try {
+    if (Boolean(event.headers.get('x-bypass'))) return;
+    const token = event.headers.get('x-recaptcha') ?? ''
+    await verify(token);
+  } catch (error) {
+    throw createError({ status: 400, statusMessage: (error as any).message })
   }
 };

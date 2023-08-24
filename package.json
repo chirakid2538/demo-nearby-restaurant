@@ -30,6 +30,7 @@
     "nuxt-swiper": "^1.2.0",
     "pinia": "^2.1.6",
     "sass": "^1.66.1",
+    "vue-recaptcha-v3": "^2.0.1",
     "vue3-google-map": "^0.17.0"
   }
 }

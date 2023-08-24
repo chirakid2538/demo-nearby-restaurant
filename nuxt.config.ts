@@ -28,6 +28,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     googleMapSecretKey: process.env.GOOGLE_MAP_SECRET_KEY,
+    recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
     redis: {
       host: process.env.REDIS_HOST,
       port: Number(process.env.REDIS_PORT),
@@ -36,6 +37,7 @@ export default defineNuxtConfig({
     },
     public: {
       googleMapSecretKey: process.env.GOOGLE_MAP_SECRET_KEY,
+      recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY
     }
   }
 })
