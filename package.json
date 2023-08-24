@@ -1,0 +1,35 @@
+{
+  "name": "@demo/nearby-restaurant",
+  "author": {
+    "name": "chirakid kaweesirikon",
+    "email": "aum.chirakid@gmail.com"
+  },
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "start:prod": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "@invictus.codes/nuxt-vuetify": "^0.3.0",
+    "@nuxt/devtools": "latest",
+    "@types/md5": "^2.3.2",
+    "@types/node": "^18.17.3",
+    "nuxt": "^3.6.5"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.11",
+    "axios": "^1.4.0",
+    "ioredis": "^5.3.2",
+    "joi": "^17.9.2",
+    "md5": "^2.3.0",
+    "nuxt-storage": "^1.2.2",
+    "nuxt-swiper": "^1.2.0",
+    "pinia": "^2.1.6",
+    "sass": "^1.66.1",
+    "vue3-google-map": "^0.17.0"
+  }
+}

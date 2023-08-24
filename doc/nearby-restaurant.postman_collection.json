@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "6e30eb97-40d3-43d6-982e-d765db684db2",
+		"name": "nearby-restaurant",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2559907"
+	},
+	"item": [
+		{
+			"name": "/address/suggestion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/address/suggestion?search=กทม",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"address",
+						"suggestion"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "กทม"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/address/suggestion",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/address/suggestion?search=กทม",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"address",
+								"suggestion"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "กทม"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"items\": [\n        {\n            \"addressId\": \"ChIJ82ENKDJgHTERIEjiXbIAAQE\",\n            \"description\": \"กทม ประเทศไทย\"\n        },\n        {\n            \"addressId\": \"ChIJFZ95y5734TAR6m5AAk8rQjw\",\n            \"description\": \"กทม.Music Bar & Restaurant 3030 ตำบล ต้นโพธิ์ อำเภอเมืองสิงห์บุรี สิงห์บุรี ประเทศไทย\"\n        },\n        {\n            \"addressId\": \"ChIJp35qWfibIjERv563PIC1Qqw\",\n            \"description\": \"กทม.208 ตำบล หัวขวาง อำเภอ โกสุมพิสัย มหาสารคาม ประเทศไทย\"\n        },\n        {\n            \"addressId\": \"EqcB4LiL4Lit4LiiIOC5guC4o-C4h-C4guC4ouC4sCDguIHguJfguKEuIOC5geC4guC4p-C4h-C4m-C4o-C4sOC5gOC4p-C4qCDguYDguILguJUg4Lib4Lij4Liw4LmA4Lin4LioIOC4geC4o-C4uOC4h-C5gOC4l-C4nuC4oeC4q-C4suC4meC4hOC4oyDguJvguKPguLDguYDguJfguKjguYTguJfguKIiLiosChQKEgmHJIvZ52AdMRGHt9RdWb3hpxIUChIJlbikZ-9gHTERsI7iXbIAAQQ\",\n            \"description\": \"ซอย โรงขยะ กทม. แขวงประเวศ เขต ประเวศ กรุงเทพมหานคร ประเทศไทย\"\n        },\n        {\n            \"addressId\": \"ChIJX8gbFzFP2zARd71yvypM7Ls\",\n            \"description\": \"สมบัติทัวร์ แม่สะเรียง รถทัวร์สายกรุงเทพ - แม่ฮ่องสอน ตำบล แม่สะเรียง อำเภอแม่สะเรียง แม่ฮ่องสอน ประเทศไทย\"\n        }\n    ],\n    \"cached\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "/address/nearby",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/address/nearby?search=กทม",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"address",
+						"nearby"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "กทม"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/address/nearby",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/address/nearby?search=กทม",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"address",
+								"nearby"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "กทม"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"items\": [\n        {\n            \"placeId\": \"ChIJxe-mTmyZ4jARWrqTyaeZmwY\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7627875,\n                    \"lng\": 100.4994304\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png\",\n            \"iconBackgroundColor\": \"#909CE1\",\n            \"displayName\": \"โรงแรมนูโว ซิตี\",\n            \"vicinity\": \"Banglamphu, 2 Samsen 2 Road, Phranakorn\",\n            \"rating\": 4.3,\n            \"userRatingsTotal\": 2652\n        },\n        {\n            \"placeId\": \"ChIJzQ2dF22Z4jARYUBibFBet_8\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7603477,\n                    \"lng\": 100.4984281\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"ไทยโคซี่เฮาส์ ร้านอาหาร\",\n            \"vicinity\": \"111/1-3 ตานี ตานี แขวงตลาดยอด เขตพระนคร\",\n            \"rating\": 4.2,\n            \"userRatingsTotal\": 5\n        },\n        {\n            \"placeId\": \"ChIJTeoJ9WyZ4jARa4N2WyxtNJM\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7615829,\n                    \"lng\": 100.4999963\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png\",\n            \"iconBackgroundColor\": \"#909CE1\",\n            \"displayName\": \"Korbua Hotel near Khao San Road Old bangkok hotels\",\n            \"vicinity\": \"239 8 ถนน พระสุเมรุ แขวงตลาดยอด เขตพระนคร\",\n            \"rating\": 4.2,\n            \"userRatingsTotal\": 246\n        },\n        {\n            \"placeId\": \"ChIJE_pbWRGZ4jARftvPzgsLno4\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7527755,\n                    \"lng\": 100.5007284\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"ย้ง ก๋วยเตี๋ยว ลูกชิ้นปลา\",\n            \"vicinity\": \"43/3 ซอย มหรรณพ 1, เสาชิงช้า, เขตพระนคร\",\n            \"rating\": 4.6,\n            \"userRatingsTotal\": 7\n        },\n        {\n            \"placeId\": \"ChIJ74lAvxGZ4jAR5vAjUoXFKBI\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7515367,\n                    \"lng\": 100.4976536\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"ป้อม โภชนา\",\n            \"vicinity\": \"43 ถนน บำรุงเมือง แขวงศาลเจ้าพ่อเสือ เขตพระนคร\"\n        },\n        {\n            \"placeId\": \"ChIJc97l5xGZ4jARPm06nA4sqOU\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7521798,\n                    \"lng\": 100.497388\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"ต้มยำมันสมองหมูเจ้าเก่า (สูตรคนจีน)\",\n            \"vicinity\": \"59 ถนนแพร่งภูธร แขวงศาลเจ้าพ่อเสือ เขตพระนคร\",\n            \"rating\": 4.5,\n            \"userRatingsTotal\": 48\n        },\n        {\n            \"placeId\": \"ChIJX59Cw3KZ4jARMxbzjCai-9k\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7603465,\n                    \"lng\": 100.4938601\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"ร้านอาหารชัยเฮ้าส์\",\n            \"vicinity\": \"35 ซอย โรงไหม แขวงชนะสงคราม เขตพระนคร\",\n            \"rating\": 4.4,\n            \"userRatingsTotal\": 35\n        },\n        {\n            \"placeId\": \"ChIJI2XO5BOZ4jARYwpwQpslZL0\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7535735,\n                    \"lng\": 100.5007699\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"นิยมโภชนา เสาชิงช้า\",\n            \"vicinity\": \"109 ถนน มหรรณพ แขวงเสาชิงช้า เขตพระนคร\",\n            \"rating\": 4.3,\n            \"userRatingsTotal\": 126\n        },\n        {\n            \"placeId\": \"ChIJcbD3U22Z4jAR9BfEz3q0-s4\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.759292,\n                    \"lng\": 100.496227\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"ร้านอาหารประกอบ\",\n            \"vicinity\": \"80-84 ถนนข้าวสาร แขวงตลาดยอด เขตพระนคร\"\n        },\n        {\n            \"placeId\": \"ChIJUUjd5BOZ4jARQgEtYC2mxI8\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7535835,\n                    \"lng\": 100.5007059\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"บ้านผัดไท\",\n            \"vicinity\": \"105 ถนน มหรรณพ แขวงเสาชิงช้า เขตพระนคร\",\n            \"rating\": 4.4,\n            \"userRatingsTotal\": 155\n        },\n        {\n            \"placeId\": \"ChIJoy2RWHKZ4jARlTg4gCcT7Es\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7615001,\n                    \"lng\": 100.4932959\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png\",\n            \"iconBackgroundColor\": \"#909CE1\",\n            \"displayName\": \"New Siam ||\",\n            \"vicinity\": \"50 ถนน พระอาทิตย์ แขวงชนะสงคราม เขตพระนคร\",\n            \"rating\": 3.9,\n            \"userRatingsTotal\": 889\n        },\n        {\n            \"placeId\": \"ChIJMfJd2ROZ4jAR4iW5Mue8Q1w\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7535695,\n                    \"lng\": 100.4996429\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"มิตรโภชนา\",\n            \"vicinity\": \"90 ถนน มหรรณพ แขวงเสาชิงช้า เขตพระนคร\",\n            \"rating\": 4.2,\n            \"userRatingsTotal\": 208\n        },\n        {\n            \"placeId\": \"ChIJC2zbW22Z4jARbwP3Hqr3h4Y\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7599389,\n                    \"lng\": 100.49625\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"Tales Khaosan (Cafe & Hostel)\",\n            \"vicinity\": \"88 ถนนจักรพงษ์ แขวงตลาดยอด เขตพระนคร\",\n            \"rating\": 4.6,\n            \"userRatingsTotal\": 243\n        },\n        {\n            \"placeId\": \"ChIJVTI38ROZ4jAR7MQAb0T9HiE\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7540144,\n                    \"lng\": 100.5010956\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"นันฟ้าเป็ดย่าง\",\n            \"vicinity\": \"164 ถนน ดินสอ แขวงเสาชิงช้า เขตพระนคร\",\n            \"rating\": 4.3,\n            \"userRatingsTotal\": 125\n        },\n        {\n            \"placeId\": \"ChIJoZifQm2Z4jARJOP2lQN590E\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.760422,\n                    \"lng\": 100.4966821\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"Fu Bar\",\n            \"vicinity\": \"72, 1-5 Ram Buttri, แขวงตลาดยอด, เขตพระนคร\",\n            \"rating\": 4.3,\n            \"userRatingsTotal\": 573\n        },\n        {\n            \"placeId\": \"ChIJrfiORG6Z4jARSNgY2uztUlM\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7666469,\n                    \"lng\": 100.497129\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"กินลมชมสะพาน\",\n            \"vicinity\": \"11 6 ถนนจักรพงษ์ แขวงวัดสามพระยา เขตพระนคร\",\n            \"rating\": 4.1,\n            \"userRatingsTotal\": 2734\n        },\n        {\n            \"placeId\": \"ChIJiWx5DWyZ4jARDnNIcTCYYiU\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7635467,\n                    \"lng\": 100.5000859\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"Punphruek shop\",\n            \"vicinity\": \"174 ซอย สามเสน 4 แขวงบ้านพานถม เขตพระนคร\",\n            \"rating\": 4.4,\n            \"userRatingsTotal\": 14\n        },\n        {\n            \"placeId\": \"ChIJZWvbnQuZ4jARZXnLiyOB-YY\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7563162,\n                    \"lng\": 100.4892946\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"มิตรโภชนา\",\n            \"vicinity\": \"49 ถนน พระจันทร์ แขวงพระบรมมหาราชวัง เขตพระนคร\",\n            \"rating\": 4,\n            \"userRatingsTotal\": 80\n        },\n        {\n            \"placeId\": \"ChIJ63IWgwuZ4jARkEODZsE10Cs\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7558965,\n                    \"lng\": 100.4895214\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"ร้านอาหารท่าพระจันทร์\",\n            \"vicinity\": \"18 ถนน มหาราช แขวงพระบรมมหาราชวัง เขตพระนคร\",\n            \"rating\": 4.4,\n            \"userRatingsTotal\": 36\n        },\n        {\n            \"placeId\": \"ChIJhSbpnAuZ4jART8SznBgBnMo\",\n            \"geometry\": {\n                \"location\": {\n                    \"lat\": 13.7562724,\n                    \"lng\": 100.4893926\n                }\n            },\n            \"icon\": \"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png\",\n            \"iconBackgroundColor\": \"#FF9E67\",\n            \"displayName\": \"นิวย่งฮั่วโภชนา\",\n            \"vicinity\": \"QF4Q+GQ2 ถนน พระจันทร์ แขวงพระบรมมหาราชวัง เขตพระนคร\",\n            \"rating\": 4.3,\n            \"userRatingsTotal\": 50\n        }\n    ],\n    \"cached\": true\n}"
+				}
+			]
+		}
+	]
+}

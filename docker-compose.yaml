@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  app:
+    container_name: app
+    env_file:
+      - ./.env
+    ports:
+      - ${APP_EXTERNAL_PORT}:${APP_INTERNAL_PORT}
+    depends_on:
+      - redis
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: always
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+    command:
+      - /bin/sh
+      - -c
+      # - Double dollars, so that the variable is not expanded by Docker Compose
+      # - Surround by quotes, so that the shell does not split the password
+      # - The ${variable:?message} syntax causes shell to exit with a non-zero
+      #   code and print a message, when the variable is not set or empty
+      - redis-server --requirepass "$${REDIS_PASSWORD:?REDIS_PASSWORD variable
+        is not set}"
+
+    ports:
+      - ${REDIS_PORT}:${REDIS_PORT}
+    volumes:
+      - ./mnt/redis:/data
