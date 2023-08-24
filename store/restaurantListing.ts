@@ -88,7 +88,7 @@ export const useRestaurantListingStore = defineStore('restaurantListingStore', (
       places.value.loading = true;
       places.value.error = undefined;
       places.value.items = [];
-      const token = await recaptcha('api/address/suggestion');
+      const token = await recaptcha('api/address/nearby');
       const response = await axios.get('/api/address/nearby', { headers: { 'x-recaptcha': token }, params: { search: String(search.value) } })
 
       places.value = response.data
