@@ -2,6 +2,8 @@
 
 ### How to run
 
+#### demo
+
 [live demo app](https://demo-nearby-restaurant-git-master-chirakid1.vercel.app/)
 
 1. `clone` .env.example -> .env
