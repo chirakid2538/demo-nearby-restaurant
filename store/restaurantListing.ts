@@ -67,7 +67,7 @@ export const useRestaurantListingStore = defineStore('restaurantListingStore', (
       addresses.value = response.data
     } catch (error) {
       const e = (error as any)
-      addresses.value.error = e?.response.data?.message ?? e.message
+      addresses.value.error = e?.response?.data?.message ?? e.message
     } finally {
       addresses.value.loading = false;
     }
@@ -95,7 +95,7 @@ export const useRestaurantListingStore = defineStore('restaurantListingStore', (
       if (response.data?.items?.[0]) handleFocusPlace(response.data?.items?.[0])
     } catch (error) {
       const e = (error as any)
-      places.value.error = e?.response.data?.message ?? e.message
+      places.value.error = e?.response?.data?.message ?? e.message
     } finally {
       places.value.loading = false;
     }
