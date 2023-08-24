@@ -51,6 +51,7 @@ export const useRestaurantListingStore = defineStore('restaurantListingStore', (
   async function handleSubmitSearch() {
     try {
       if (!search.value) return;
+      addresses.value.error = undefined;
       addresses.value.loading = true;
       addresses.value.items = [];
       const response = await axios.get('/api/address/suggestion', { params: { search: String(search.value) } })
@@ -76,6 +77,7 @@ export const useRestaurantListingStore = defineStore('restaurantListingStore', (
   async function handleGetPlaces() {
     try {
       places.value.loading = true;
+      places.value.error = undefined;
       places.value.items = [];
       const response = await axios.get('/api/address/nearby', { params: { search: String(search.value) } })
 
