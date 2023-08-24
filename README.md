@@ -27,7 +27,7 @@ tech stack (Nuxtjs, Redis, Google maps service)
 #### system design
 
 ![system architecture design](doc/system-architecture-design.png) system
-architecture design
+architecture design ใช้ recaptcha สำหรับ auth ฝั่ง frontend
 
 ![swimlane backend flow](doc/backend-api-flow.png)
 [swimlane](https://swimlanes.io/#tVO9TsMwEN79FKeMEVUqIZYMDDCw8Q4mOdKI1DaOM3QDgYS6IxAMDCCEBAs/quS8jR+Fc5wiiih0gCmWfff93cWUpsIUBHK9NxlorA1vNBeGMVZo2agUEq7KhOc5vdVJ3RQF1ZRSJGy7KlEYGGxu8ewARZ7CYYN6AilEzh47e+esdfbMtUfOXjp7EzEmpMGUxfEufeMYMp6NEAhYSVEjOHvu2qmzD87eQlSTpGwU9aC10aUowLWn/r2dQhxvUMOVs68d+iyOGeuFkCTYkbKoEMZc1UAGUijQgNKYl5lXD72huaQilFMleAAlS3KWgqp4hglvjMzkWFVokLEvyJ7sI4BgKOeGf9YSgkq90aYysC81HUWOGhaRv008TOa/014I+U+yLpCc5Z7mifqg4mYNKo9qH519625J8ouz16Giu7/oDkT07NqTzta91+g9kZYZKSWLvTFYMrOe+OdB/a4/5B42oCOEpYxhS0JD2FpmJqqLev43aZ6XTQ3rw+EQVt2g1VZoQSd7Bw==)
