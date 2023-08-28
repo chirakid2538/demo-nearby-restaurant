@@ -15,6 +15,7 @@ type RestaurantListingStore = {
   handleGetPlaces: () => Promise<void>,
 
   triggerSubmitSearch: () => void,
+  handleSubmitSearch: () => Promise<void>,
   handleClickAddress: (params: any) => void
   handleFocusPlace: (place: PlaceSuggestion, focusZoom?: number) => void
 }
@@ -116,7 +117,7 @@ export const useRestaurantListingStore = defineStore('restaurantListingStore', (
     }
   }
 
-  return { search, addresses, places, zoom, center, getCurrentLocation, handleGetPlaces, triggerSubmitSearch, handleClickAddress, handleFocusPlace };
+  return { search, addresses, places, zoom, center, getCurrentLocation, handleSubmitSearch, handleGetPlaces, triggerSubmitSearch, handleClickAddress, handleFocusPlace };
 });
 
 

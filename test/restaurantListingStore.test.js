@@ -23,4 +23,12 @@ describe('restaurant listing store', () => {
     store.getCurrentLocation();
     expect(store.search).toMatchObject('Bang Sue');
   });
+
+  test('get address autocomplete [access-denied]', async () => {
+    const store = useRestaurantListingStore();
+    store.getCurrentLocation();
+    expect(store.search).toMatchObject('Bang Sue');
+    await store.handleSubmitSearch();
+    expect(store.addresses.error).toMatchObject('common/access-denied');
+  });
 });
