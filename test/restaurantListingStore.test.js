@@ -31,4 +31,11 @@ describe('restaurant listing store', () => {
     await store.handleSubmitSearch();
     expect(store.addresses.error).toMatchObject('common/access-denied');
   });
+
+  test('get places [access-denied]', async () => {
+    const store = useRestaurantListingStore();
+    store.getCurrentLocation();
+    await store.handleGetPlaces();
+    expect(store.places.error).toMatchObject('common/access-denied');
+  });
 });

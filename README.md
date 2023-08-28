@@ -64,3 +64,12 @@ Postman Collection แนบตัวอย่าง Request, Response
 | :------------------------- | :------------------------------------------------------- |
 | `/api/address/suggestion/` | สำหรับค้นหาที่อยู่ (cache 5 นาที)                        |
 | `/api/address/nearby/`     | สำหรับค้นหา สถานที่ (ร้านอาหาร) ใกล้เคียง (cache 5 นาที) |
+
+### Testing
+
+1. เปิด terminal run คำสั่ง ตามข้อ 1 หรือ `npm run dev` จำเป็นต้อง run
+   (เพราะยังไม่ได้ mockup test function)
+2. เปิด terminal run คำสั่ง `npm run test`
+3. ผลลัพธ์ \*.spec.js ใน folder tests
+
+![test result](doc/test-result.png) test result
